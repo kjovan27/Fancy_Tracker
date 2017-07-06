@@ -13,13 +13,13 @@ class User(object):
                     
     def add_completed_skills(self):#@kidepo
         count = 1
-        
+        #############--- 50%
         allSkillList = self.skills
         for skill in allSkillList :
             print("["+str(count)+"]: {}".format(skill))
             count+=1
         while True:
-            chose = raw_input("Enter No. of skill to mark ('Hit 0 to exit'): ")
+            chose = input("Enter No. of skill to mark ('Hit 0 to exit'): ")
             #make some validations
             if int(chose) != 0:
                 
