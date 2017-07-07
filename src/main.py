@@ -34,3 +34,10 @@ class User(object):
                     count+=1
             elif int(chose) == 0:
                 break
+                
+    def view_progress(self):
+        progress_percentage = (float(len(self.done_skills))/float(len(self.skills))) * 100
+        return str(progress_percentage + "%")
+            
+                
+                
