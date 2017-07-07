@@ -14,7 +14,3 @@ class User(object):
                 return (self.skills)
         else:
             raise TypeError
-
-
-new = User('Hon')
-print(new.add_skills(4))
