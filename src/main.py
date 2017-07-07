@@ -10,3 +10,27 @@ class User(object):
             for skill in skills_to_learn:
                 if isinstance(skill, str):
                     self.skills.append(skill)
+                    
+    def add_completed_skills(self):#@kidepo
+        count = 1
+        
+        allSkillList = self.skills
+        for skill in allSkillList :
+            print("["+str(count)+"]: {}".format(skill))
+            count+=1
+        while True:
+            chose = raw_input("Enter No. of skill to mark ('Hit 0 to exit'): ")
+            #make some validations
+            if int(chose) != 0:
+                
+                self.done_skills.append(allSkillList[int(chose)-1])
+            
+                count=1
+                for skill in allSkillList :
+                    if skill in self.done_skills:
+                        print("["+str(count)+"]: {}*".format(skill))
+                    else:
+                        print("["+str(count)+"]: {}".format(skill))
+                    count+=1
+            elif int(chose) == 0:
+                break
