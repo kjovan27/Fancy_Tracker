@@ -15,6 +15,16 @@ class User():
                     return (self.skills)
             else:
                 raise TypeError
+
+    def view_skills(self):
+        count = 1
+        print("Added skills")
+        for skill in self.skills:
+            
+           
+            print("["+str(count)+"]:"+skill)
+            count+=1
+        
                     
     def add_completed_skills(self):#@kidepo
         count = 1
@@ -41,6 +51,26 @@ class User():
             elif int(chose) == 0:
                 break
             
+    def unstudied_skills(self):
+        """ this method enables the user view undone tasks"""
+        undone = [task for task in self.skills if task not in self.done_skills]
+        print("Hello "+ str(self.user_name)+" :)\nHere are the skills that are still incomplete: ")
+        for task in undone:
+                num = 1
+                print("["+str(num)+"]:"+ str(task))
+                num += 1
+
+    def view_completed_skills(self):
+        count = 1
+        print("Completed skills")
+        for skill in self.done_skills:
+            
+            print("["+str(count)+"]:"+skill)
+            count+=1
+
+    def view_progress(self):
+        progress_percentage = (float(len(self.done_skills))/float(len(self.skills))) * 100
+        print ( str(progress_percentage) + "%")
 
       
         
@@ -69,26 +99,25 @@ if __name__ == "__main__":
     #Menu
     while True:
         print("\n_______Menu_______")
-        print("[1]:See Added Skills\n[2]:Mark achieved Skills\n[3]:See achieved Skills\n[4]:View Skills I havent Studied\n[5]:View my progress\n[6]:Create New Account")
+        print("[1]:See Added Skills\n[2]:Mark achieved Skills\n[3]:See achieved Skills\n[4]:View Skills I havent Studied\n[5]:View my progress\n")
         
         choice = input("Enter Choice:")
         
         if int(choice) is 1:
-            #newUser.view_skills()
-            print ("")
-            
+            newUser.view_skills()
+    
         elif int(choice) == 2:
             newUser.add_completed_skills()
             
         elif int(choice) == 3:
-            #newUser.view_completed_skills()
-            print("")
+            newUser.view_completed_skills()
+            
         elif int(choice) == 4:
-            #newUser.view_incomplete_skills()
-            print("")
+            newUser.unstudied_skills()
+            
         elif int(choice) == 5:
-            #newUser.view_progress()
-            print("")
+            newUser.view_progress()
+            
         elif int(choice) == 0:
             print("Exiting...")
             break
