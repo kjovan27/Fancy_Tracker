@@ -13,7 +13,7 @@ class User(object):
                     
     def add_completed_skills(self):#@kidepo
         count = 1
-        
+        #############--- 50%
         allSkillList = self.skills
         for skill in allSkillList :
             print("["+str(count)+"]: {}".format(skill))
