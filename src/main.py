@@ -46,7 +46,12 @@ class User(object):
         for task in undone:
                 num = 1
                 print("["+str(num)+"]:"+ str(task))
-                num += 1            
+                num += 1   
+                
+    def view_progress(self):
+        progress_percentage = (float(len(self.done_skills))/float(len(self.skills))) * 100
+        print ( str(progress_percentage) + "%")
+
 
       
         
