@@ -17,3 +17,6 @@ class TestUserClass(TestCase):
     def test_argument_data_types_for_User(self):
         self.assertIsInstance(
             self.new_user.user_name, str, msg="Argument should be a string")
+
+    def test_if_class_has_add_skills_method(self):
+        getattr(User, 'add_skills', 'None')

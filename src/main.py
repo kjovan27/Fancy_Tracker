@@ -6,7 +6,7 @@ class User(object):
         self.done_skills = []
 
     def add_skills(self, skills_to_learn):
-        if skills_to_learn == None:
+        if skills_to_learn != None:
             for skill in skills_to_learn:
                 if isinstance(skill, str):
                     self.skills.append(skill)
